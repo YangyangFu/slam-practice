@@ -3,3 +3,6 @@
 
 # MACOS
 .DS_Store
+
+# cpp build
+build
