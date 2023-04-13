@@ -1,0 +1,1 @@
+This is an online course at [here](http://ais.informatik.uni-freiburg.de/teaching/ws12/mapping/).
