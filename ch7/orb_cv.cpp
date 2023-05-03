@@ -51,6 +51,7 @@ int main(int argc, char **argv) {
     // step 3: match the BRIEF descriptors in the two images, using Hamming distance
     vector<DMatch> matches;
     t1 = chrono::steady_clock::now();
+    // a->b is a synonym for (*a).b in C++, where a is an iterator, *a is its value, and b is a member of the value
     matcher->match(descriptors1, descriptors2, matches);
     t2 = chrono::steady_clock::now();
     time_used = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
@@ -60,7 +61,7 @@ int main(int argc, char **argv) {
     // find the minimum distance and maximum distance, which is the distance between the most similar and the most
     // dissimilar two sets of points, the distance between the most similar two sets of points is close to 0, and the
     // distance between the most dissimilar two sets of points is large
-    // auto is equivalent to map<vector<DMatch>::iterator, double>
+    // auto is a type specifier that automatically determines the type of the variable at compile time
     auto min_max = minmax_element(matches.begin(), matches.end(),
                                   [](const DMatch &m1, const DMatch &m2) { return m1.distance < m2.distance; });
     
